@@ -4,6 +4,11 @@ Created on Mon Jun 27 23:15:48 2022
 
 @author: Rushil
 """
+import nltk
+from nltk.tokenize import sent_tokenize, word_tokenize
+from textblob import TextBlob
+import matplotlib.pyplot as plt
+from wordcloud import WordCloud
 import pickle
 from pathlib import Path
 import streamlit_authenticator as stauth
@@ -16,6 +21,9 @@ import time
 from PIL import Image
 import json
 from streamlit_lottie import st_lottie
+nltk.download('punkt')
+nltk.download('wordcloud')
+
 def load_lottieurl(url:str):
      r=requests.get(url)
      if r.status_code !=200:
@@ -127,11 +135,7 @@ df = pd.DataFrame(my_dict)
 
 # Text Cleaning
 
-import nltk
-from nltk.tokenize import sent_tokenize, word_tokenize
-from textblob import TextBlob
-import matplotlib.pyplot as plt
-from wordcloud import WordCloud
+
 
 final_text = list(df['Text'])
 #final_text
