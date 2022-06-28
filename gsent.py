@@ -23,6 +23,7 @@ import json
 from streamlit_lottie import st_lottie
 nltk.download('punkt')
 nltk.download('wordcloud')
+nltk.download('stopwords')
 
 def load_lottieurl(url:str):
      r=requests.get(url)
